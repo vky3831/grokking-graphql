@@ -1,4 +1,4 @@
-package com.learnhood.grokkinggraphql.resolver;
+package com.learnhood.grokkinggraphql.resolver.post;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

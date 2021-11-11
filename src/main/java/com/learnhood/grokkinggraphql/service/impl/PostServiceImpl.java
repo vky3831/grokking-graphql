@@ -10,7 +10,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.learnhood.grokkinggraphql.dto.PostDto;
+import com.learnhood.grokkinggraphql.model.Author;
 import com.learnhood.grokkinggraphql.model.Post;
+import com.learnhood.grokkinggraphql.repository.AuthorRepository;
 import com.learnhood.grokkinggraphql.repository.PostRepository;
 import com.learnhood.grokkinggraphql.service.PostService;
 
@@ -18,10 +20,12 @@ import com.learnhood.grokkinggraphql.service.PostService;
 public class PostServiceImpl implements PostService {
 
   private final PostRepository postRepository;
+  private final AuthorRepository authorRepository;
 
   @Autowired
-  public PostServiceImpl(PostRepository postRepository) {
+  public PostServiceImpl(PostRepository postRepository, AuthorRepository authorRepository) {
     this.postRepository = postRepository;
+    this.authorRepository = authorRepository;
   }
 
   @Override
@@ -58,5 +62,20 @@ public class PostServiceImpl implements PostService {
                   .build();
             })
         .collect(Collectors.toList());
+  }
+
+  @Override
+  public UUID createAuthor(PostDto postDto) {
+    Author author = authorRepository.findById(postDto.getAuthorId()).get();
+
+    Post post =
+        Post.builder()
+            .category(postDto.getCategory())
+            .title(postDto.getTitle())
+            .description(postDto.getDescription())
+            .author(author)
+            .build();
+
+    return postRepository.saveAndFlush(post).getId();
   }
 }

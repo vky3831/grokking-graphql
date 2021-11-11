@@ -1,4 +1,4 @@
-package com.learnhood.grokkinggraphql.resolver;
+package com.learnhood.grokkinggraphql.resolver.post;
 
 import java.util.List;
 

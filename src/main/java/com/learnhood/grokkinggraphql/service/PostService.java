@@ -9,4 +9,6 @@ public interface PostService {
   List<PostDto> getAllPostByAuthorId(UUID authorId);
 
   List<PostDto> getRecentPosts(int count, int offset);
+
+  UUID createAuthor(PostDto postDto);
 }
