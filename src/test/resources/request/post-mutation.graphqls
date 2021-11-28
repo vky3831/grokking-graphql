@@ -1,0 +1,8 @@
+mutation {
+  createPost(post: {
+    title: "Crackers"
+    description: "they burst"
+    category: "sound"
+    authorId: "b8addf5e-43f8-4165-9a5f-ab73094a5b1e"
+  })
+}

@@ -1,0 +1,26 @@
+{
+  "data": {
+    "authors": [
+      {
+        "id": "b8addf5e-43f8-4165-9a5f-ab73094a5b1e",
+        "name": "peter",
+        "email": "peteer@gmail.com"
+      },
+      {
+        "id": "bffc75ba-c8e0-4178-93c9-20eb6cafed75",
+        "name": "Smith",
+        "email": "Smith@gmail.com"
+      },
+      {
+        "id": "44b0ed8f-351c-4368-a472-cadd17444947",
+        "name": "John",
+        "email": "John@gmail.com"
+      },
+      {
+        "id": "023946ee-6173-4d49-8bac-c0b9e4a7ba88",
+        "name": "Shane",
+        "email": "Shane@gmail.com"
+      }
+    ]
+  }
+}
